@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 // (req, res): These are the request and response objects. req holds incoming data, while res is used to send data back.
 // res.send('Pet Finder API'): Sends a text response ("Pet Finder API") to the browser when this route is accessed.
 app.get('/', (req, res) => {        
-    res.send('Pet Finder API');
+    res.send('Pet Finder is running!');
 });  
 
 // Make the server listen on the specified port
@@ -27,5 +27,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
- 
