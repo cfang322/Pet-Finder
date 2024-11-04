@@ -3,6 +3,7 @@
 // Imports dotenv so you can configure environment variables (e.g., server port, database URL) for different environments securely.
 import express from 'express'; 
 import dotenv from 'dotenv'; 
+import petRoutes from './routes/petRoutes';
 
 // Initialize dotenv configuration - Loads environment variables from the .env file into process.env, allowing you to access them throughout your codebase.
 dotenv.config();
@@ -20,6 +21,10 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {        
     res.send('Pet Finder is running!');
 });  
+
+console.log('Registering routes');
+// Register pet routes before starting the server
+app.use('/api', petRoutes);
 
 // Make the server listen on the specified port
 // app.listen(PORT, () => { ... }): Starts the server, making it listen for incoming requests on the specified PORT.
